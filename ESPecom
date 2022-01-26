@@ -1,0 +1,33 @@
+<script>
+// Send transaction data with a pageview if available
+// when the page loads. Otherwise, use an event when the transaction
+// data becomes available.
+//
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+dataLayer.push({
+'event': 'eec.purchase',
+  'ecommerce': {
+    'purchase': {
+      'actionField': {
+        'id': '22352', // order Id - Transaction ID. Required for purchases and refunds
+'products': [{                            
+        'name': 'Double pack of jersey cotton tops',     // Name or ID is required.
+        'id': '010EE2N301_400',
+        'price': '6.24',
+        'variant': 'Double pack of jersey cotton tops - NAVY - 400',
+        'quantity': 5,
+       },
+       {
+        'name': 'Long shirt blouse, 100% cotton',
+        'id': '67890',
+        'price': '17.40',
+        'variant': 'Long shirt blouse, 100% cotton - WHITE 3 - 102',
+        'quantity': 5
+       }]
+
+      }
+    }
+  }
+});
+</script>
+//Notice: Variables need to be replaced dynamically according to the order data.
